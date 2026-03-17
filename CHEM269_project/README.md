@@ -9,16 +9,14 @@ Molecular glues are a powerful class of targeted protein degraders, but predicti
 ## Data Sources & Features Used
 The model integrates both 2D chemical data and 3D structural modeling data:
 
-    Chemical Structures: SMILES strings representing the MGD library.
+**Chemical Structures:** SMILES strings representing the MGD library.
 
-    Biological Data: Experimental DMSO-normalized abundance values for ZBTB11 and IKZF1 at 10 test MGD concentrations (%).
+**Biological Data:** Experimental DMSO-normalized abundance values for ZBTB11 and IKZF1 at 10 test MGD concentrations (%).
 
-    3D Structural Features: 
-        * ipTM confidence scores extracted from RoseTTAFold 3 (RF3) modeling of the CRBN:MGD:substrate ternary complexes.
-
-        * Minimized complex energies calculated using OpenFF/OpenMM.
-
-        * The fractional ratio of successful, physically plausible CRBN:MGD:substrate conformations.
+**3D Structural Features:** 
+* ipTM confidence scores extracted from RoseTTAFold 3 (RF3) modeling of the CRBN:MGD:substrate ternary complexes.
+* Minimized complex energies calculated using OpenFF/OpenMM.
+* The fractional ratio of successful, physically plausible CRBN:MGD:substrate conformations.
 
 ## Computational Approach & Workflow Overview
 The primary workflow utilizes a Multi-target Directed Message Passing Neural Network (D-MPNN) implemented using Chemprop v2 and PyTorch Lightning. An Optuna wrapper is used to perform rigorous hyperparameter tuning (optimizing depth, hidden dimensions, dropout, learning rate, temperature, and contrastive loss weights).
@@ -55,7 +53,9 @@ graph TD;
 
 ## Interpretation, Limitations, and Future Directions
 **Interpretation:** The bifurcated network design successfully captures the shared mechanics of CRBN recruitment in the early layers, while the specialized branches map the distinct substrate degrons and improve upon a single, unified FFN header. Incorporation of 3D-derived features 
+
 **Limitations:** The network heavily relies on the accuracy of in silico RF3 structures; inaccuracies in generative 3D folding cascade directly into the structural features.
+
 **Future Directions:** Expand the MGD library to test extrapolative capacity on novel IMiD (e.g. thalidomide, lenalidomide) derivatives, and incorporate additional structural featurizations such as Buried Surface Area (BSA) or predicted interface clashes. Other biological parameters could also be featurized, such as half-life of the endogenous proteins, which may improve the power of the model to distinguish drivers of ZBTB11 vs. IKZF1 degradation.
 
 ## Reproducibility Instructions
