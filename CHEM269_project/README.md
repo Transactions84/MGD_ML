@@ -153,7 +153,10 @@ Open the provided Jupyter Notebook (model7.ipynb) in your preferred environment 
   * rf3_features_with_thermodynamics_ikzf1.csv - IKZF1-specific features modeled and computed by RoseTTAFold 3 and OpenMM/OpenFF. Contains columns: 'Compound_ID', 'SMILES', 'Seed', 'ipTM_ikzf1', 'pTM_ikzf1',	'pLDDT_ikzf1', 'Ranking_Score_ikzf1',	'Early_Stopped_ikzf1',	'Min_Dist_Angstrom_ikzf1',	'Dist_Status_ikzf1',	'Flagged_Greater_Than_10A_ikzf1', 'Fraction_Success_Under_10A_ikzf1', 'OpenMM_Minimized_Energy_kJ_mol_ikzf1'
 
 ### 📊 Outputs:
+* zbtb11_mgd_auc_labels_input.csv (Input labeled with calculated AUC values)
 * zbtb11_mgd_ridge_output.csv & zbtb11_mgd_chemprop_output.csv (Full test set predictions)
-* chemprop_umap.png (Chemical space embeddings)
+* zbtb11_mgd_ridge_metrics.csv & zbtb11_mgd_chemprop_metrics.csv (regression metrics computed for all concentration-specific abundances)
+* data_checks.png (Distribution and correlation analysis of the target AUCs)
+* *_umap.png (Chemical space visualization)
 * learning_curves.png (Training and validation loss visualization)
-* top_10_zbtb11_saliency_true_grid.png & top_10_ikzf1_saliency_true_grid.png (Feature attribution maps)
+* top_10_zbtb11_saliency_grid.png & top_10_ikzf1_saliency_grid.png (Feature attribution maps)
