@@ -141,6 +141,8 @@ To run this analysis locally, ensure you have Python 3.12 installed (**IMPORTANT
     pip install chemprop pytorch-lightning umap-learn astartes
 
 ### 4. Running the pipeline
+**WARNING: PIPELINE REQUIRES DEDICATED GPU COMPUTE RESOURCES**
+
 Open the provided Jupyter Notebook (model7.ipynb) in your preferred environment (Jupyter Lab, VSCode, etc.). Ensure the input data files (zbtb11_mgd_input.csv, rf3_features_with_thermodynamics_*.csv) are located in the root directory. Execute the notebook sequentially from top to bottom.
 
 ## 📁 Repository Artifacts
